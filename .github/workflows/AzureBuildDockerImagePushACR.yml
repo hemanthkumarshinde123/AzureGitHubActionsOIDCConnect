@@ -18,14 +18,6 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t dockerhemanth.azurecr.io/myapp:${{ github.sha }}
-        docker push dockerhemanth.azurecr.io/myapp:${{ github.sha }}
+        docker build . -t dockerhemanth.azurecr.io/hello-world:${{ github.sha }}
+        docker push dockerhemanth.azurecr.io/hello-world:${{ github.sha }}
         
-    - uses: azure/webapps-deploy@v2
-      with:
-        app-name: leapapplication'
-        images: 'dockerhemanth.azurecr.io/myapp:${{ github.sha }}'
-    
-    - name: Azure logout
-      run: |
-        az logout
