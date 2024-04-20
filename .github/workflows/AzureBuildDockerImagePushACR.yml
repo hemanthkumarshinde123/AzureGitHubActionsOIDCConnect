@@ -12,12 +12,12 @@ jobs:
         working-directory: dotnet
     steps:
     - uses: actions/checkout@v2
-    - uses: azure/docker-login@v1
+    - uses: azure/docker-login@v3
       with:
         login-server: dockerhemanth.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t dockerhemanth.azurecr.io/myapp:${{ github.sha }}
+        docker build . -t dockerhemanth.azurecr.io/app:${{ github.sha }}
         docker push dockerhemanth.azurecr.io/hello-world:${{ github.sha }}
         
