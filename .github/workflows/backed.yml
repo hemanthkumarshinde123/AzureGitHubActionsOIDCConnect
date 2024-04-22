@@ -1,4 +1,4 @@
-name: Build Docker Container Image and Push to ACR
+name: docker_build and push acr
 
 on:
   workflow_dispatch:
