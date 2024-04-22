@@ -1,4 +1,4 @@
-name: docker_build and push acr
+name: docker_build and push_to_acr
 
 on:
   workflow_dispatch:
